@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="stil.css"/>
+    <title>Admin</title>
+    </head>
+    <body style="background-color: #fdd4aa;" onload="ocitajIzmenu()">
+        <div class="jumbotron" style="padding: 0px 50px; background-color: #fff7eb; padding-bottom: 1em;">
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col" style="text-align: left;">
+                <img src="hedgehog_logo.png" style="width: 15em;"/>
+            </div>
+    
+            <div class="col" style="text-align: center; padding-top: 4em;">
+                <a href="index.html"><h1 style="font-size: 3.2em; font-weight: bold;"  >Knjižara Jež</h1></a>
+            </div>
+    
+            <div class="col" style="text-align: right;">
+                <a href="" class="img"><img src="ikonica.png" style="width: 10%; margin-top: 70px; margin-right: 10px;"/></a>
+            </div>
+    
+        </div>
+        </div>
+        <div class="row">
+            <div class="col" style="text-align: center;">
+            <button style="background: transparent; font-weight: bold; border: none; font-size: larger;" onclick="window.history.back()">Nazad</button>
+        </div>
+        </div>
+        </div>
+
+        <div class="container-fluid">
+          <form onsubmit="uradiIzmenu(event)">
+          <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+              <div class="row" id="izmena_kontejner">
+                
+              </div> 
+              <input type="submit" value="Izvrsi izmenu" style="float: right;"/>
+            </div>
+            <div class="col-3"></div>
+
+          </div>
+        </div>
+        
+    
+    
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+  <script src="knjige.js"></script>
+  <script src="korisnici.js"></script>
+  <script src="korisnikIzmena.js"></script>
+  </body>
+</html>

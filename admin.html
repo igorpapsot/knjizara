@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="stil.css"/>
+    <title>Admin</title>
+    </head>
+    <body style="background-color: #fdd4aa;" onload="ucitajKorisnike()">
+        <div class="jumbotron" style="padding: 0px 50px; background-color: #fff7eb; padding-bottom: 1em;">
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-md-4" style="text-align: center;">
+                <img src="hedgehog_logo.png" style="width: 15em;"/>
+            </div>
+    
+            <div class="col-md-4" style="text-align: center; padding-top: 4em;">
+                <a href="index.html"><h1 style="font-size: 3.2em; font-weight: bold;"  >Knjižara Jež</h1></a>
+            </div>
+    
+            <div class="col-md-4" style="text-align: center;">
+                <a href="korpa.html" class="img"><img src="ikonica.png" style="width: 4em; margin-top: 70px; margin-right: 10px;"/></a>
+            </div>
+
+            
+        </div>
+        <div class="row">
+            <div class="col-md-4" style="text-align: center;">
+              <a href="admin.html" style="font-weight: bold;">Admin</a>
+            </div>
+      
+            <div class="col-md-4" style="text-align: center;">
+              <button class="dugme" onclick="document.getElementById('popup-container2').style.display = 'block';" style="font-weight: bold;">Registracija</button>
+            </div>
+      
+            <div class="col-md-4" style="text-align: center;">
+              <button class="dugme" onclick="document.getElementById('popup-container').style.display = 'block';" style="font-weight: bold;">Login</button>
+            </div>
+          </div>
+        </div>
+        
+        
+        </div>
+        
+        <div class="container">
+            <div class="row justify-content-center" id="korisnici">
+            </div>
+        </div>
+
+  
+  <div class="div1" id="popup-container">
+    <div class="row justify-content-center">
+      <div class="div2 col-6 "style="height: 20em;">
+        <div style="text-align: right;">
+          <button onclick="document.getElementById('popup-container').style.display = 'none';" style="display: inline-block; text-align: right; margin:  10px 20px; border-radius: 5px;">X</button>
+          <form id="loginForm" name="SignUpForm" style="text-align: center;" onsubmit="login(event)">
+            <p>
+                <label for="username"><b>Korisnicko Ime:</b></label>
+                <br/>
+                <input type="text" name="username" id="txtUsername" style="width: 45%;" autocomplete="off" required></input>
+            </p>
+
+            <p>
+                <label for="password"><b>Lozinka:</b></label>
+                <br/>
+                <input type="password" name="password" id="txtPassword" style="width: 45%;" autocomplete="off" required></input>
+            </p>
+
+            <p id="login_greska" style="color: red;"></p>
+            <div style="text-align: center;">
+              <input type="submit" class="dugme_kupi" style="width: auto;" value="Uloguj se"></input>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="div1" id="popup-container2">
+    <div class="row justify-content-center">
+      <div class="div2 col-8 " style="height: auto; padding: none;">
+        <div style="text-align: right;">
+          <button onclick="document.getElementById('popup-container2').style.display = 'none';" style="display: inline-block; text-align: right; margin:  10px 20px; border-radius: 5px;">X</button>
+          <form name="SignUpForm" style="text-align: center;" onsubmit="register(event)" >
+            <p>
+                <label for="fname"><b>Ime:</b></label>
+                <br/>
+                <input type="text" name="fname" id="fname" style="width: 45%" required>
+            </p>
+
+            <p>
+              <label for="lname"><b>Prezime:</b></label>
+              <br/>
+              <input type="text" name="lname" id="lname" style="width: 45%;" required>
+            </p>
+
+            <p>
+                <label for="password"><b>Lozinka:</b></label>
+                <br/>
+                <input type="password" name="password" id="register_password" style="width: 45%;" required>
+            </p>
+
+            <p>
+              <label for="email"><b>Email:</b></label>
+              <br/>
+              <input type="text" name="email" id="email" style="width: 45%;" required>
+            </p>
+
+            <p>
+              <label for="username"><b>Korisnicko ime:</b></label>
+              <br/>
+              <input type="text" name="username" id="register_username" style="width: 45%;" required>
+            </p>
+
+            <p>
+              <label for="date"><b>Datum rodjenja:</b></label>
+              <br/>
+              <input type="text" name="date" id="date" style="width: 45%;" required>
+            </p>
+
+            <p>
+              <label for="adresa"><b>Adresa:</b></label>
+              <br/>
+              <input type="text" name="adresa" id="adresa" style="width: 45%;" required>
+            </p>
+
+            <p>
+              <label for="Br"><b>Broj telefona:</b></label>
+              <br/>
+              <input type="text" name="Br" id="Br" style="width: 45%;" required>
+            </p>
+
+            <p id="register_greska" style="color: red;"></p>
+            <div style="text-align: center;">
+                <input type="submit" class="dugme_kupi" style="width: auto;" value="Registruj se"></input>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script>
+  <script src="knjige.js"></script>
+  <script src="korisnici.js"></script>
+  <script src="korisnikIzmena.js"></script>
+    </body>
+</html>
